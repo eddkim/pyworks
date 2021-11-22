@@ -16,3 +16,4 @@ for i in range(0,row):
         print(seat, end=' ')
     print()
 
+
