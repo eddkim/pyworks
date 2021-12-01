@@ -15,4 +15,4 @@ class VIPCustomer (Customer):
         return price
 
     def __str__(self):
-        return super().__str__()+"전문 상담원 ID는 {}입니다.".format(self.agent)
+        return super().__str__()+"\n전문 상담원 ID는 {}입니다.".format(self.agent)

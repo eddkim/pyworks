@@ -8,7 +8,7 @@ class GoldCustomer (Customer):
         self.bonus_ratio = 0.02
 
     def calc_price(self,price):
-        price -= price - int(price*self.sale_ratio)
+        price -= int(price*self.sale_ratio)
         self.bonus_point+=price*self.bonus_ratio
         #할인 된 가격 = 가격 - (가격 x 구매 할인율)
         return price
