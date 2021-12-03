@@ -26,5 +26,24 @@ def get_loopindex():
     items = ['a','b','c','d']
     return render_template('loop_index.html',items=items)
 
+@app.route('/even_odd/',methods=['GET','POST'])
+def even_odd():
+    if request.method == "POST":
+        try :
+        #데이터 수집
+            num = int(request.form['num'])
+        except ValueError :
+            error_message = "숫자를 입력해"
+            return render_template('even_odd.html',error_message=error_message)
+        else:
+        #데이터 처리
+            if num % 2 ==0:
+                result = "짝수다"
+            else:
+                result = "홀수다"
+            return render_template('calc_result.html',num = num,result=result)
+    else: #GET인경우
+        return render_template('even_odd.html')
+
 
 app.run(debug=True)  # debug = True ,서비스 하기 전 개발 모드
